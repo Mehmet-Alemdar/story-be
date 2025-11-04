@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "0b2b19a1-f2a1-44bd-8540-7225523128a0",
+		"name": "story",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15137000",
+		"_collection_link": "https://bold-resonance-620518.postman.co/workspace/My-Workspace~d6a8a78a-2bae-474b-82c9-c95d5cea3c2c/collection/15137000-0b2b19a1-f2a1-44bd-8540-7225523128a0?action=share&source=collection_link&creator=15137000"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Mehmet Kaya2\",\n  \"email\": \"mehmet.kaya2@example.com\",\n  \"password\": \"12345678\",\n  \"authProvider\": \"google\",\n  \"providerId\": \"google-oauth2|11223344556677889900\",\n  \"profilePhoto\": \"https://lh3.googleusercontent.com/a-/AOh14Gjxyz12345\",\n  \"isPremium\": true,\n  \"premiumStartDate\": \"2025-11-01T00:00:00.000Z\",\n  \"premiumEndDate\": \"2026-11-01T00:00:00.000Z\",\n  \"paymentProvider\": \"google_play\",\n  \"paymentTransactionId\": \"GPA.3344-5566-7788-9900\",\n  \"subscriptionPlan\": \"yearly\",\n  \"deviceId\": \"android-12a3b4c5d6\",\n  \"fcmToken\": \"fcm_token_abc123xyz\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
