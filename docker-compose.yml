@@ -7,7 +7,7 @@ services:
     environment:
       - MONGODB_CONNECTION_STRING=mongodb://mongodb:27017/story
     ports:
-      - "3010:3010"
+      - "8080:8080"
     depends_on:
       - mongodb
 
