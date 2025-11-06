@@ -1,33 +1,62 @@
-const router = require('express').Router();
-const storyService = require('./story.service');
+const router = require("express").Router();
+const multer = require("multer");
+const storyService = require("./story.service");
+const { FirebaseStorageService } = require("../../firebase/firebase-storage.service");
 
-router.post('/', async(req, res) => {
-  const body = req.body;
+const upload = multer({ dest: "uploads/" });
 
-  const createdStory = await storyService.create(body);
+router.post("/", upload.array("videos"), async (req, res) => {
+  try {
+    const { name, character, type } = req.body;
+    const files = req.files || [];
 
-  res.send(createdStory);
-})
+    const uploadedUrls = await Promise.all(
+      files.map((file) =>
+        FirebaseStorageService.uploadFile(file.path, file.originalname, "stories")
+      )
+    );
 
-router.get('/', async(req, res) => {
-  const stories = await storyService.getAll();
+    const createdStory = await storyService.create({
+      name,
+      character,
+      type: type || "video",
+      videoContent: uploadedUrls,
+    });
 
-  res.send(stories);
-})
+    res.status(201).send(createdStory);
+  } catch (error) {
+    console.error("Story create error:", error);
+    res.status(500).send({ error: "Story creation failed" });
+  }
+});
 
-router.get('/:id', async(req, res) => {
-  const { id } = req.params;
-  const story = await storyService.getById(id);
+router.get("/", async (req, res) => {
+  try {
+    const stories = await storyService.getAll();
+    res.send(stories);
+  } catch (err) {
+    res.status(500).send({ error: "Failed to fetch stories" });
+  }
+});
 
-  res.send(story);
-})
+router.get("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const story = await storyService.getById(id);
+    res.send(story);
+  } catch (err) {
+    res.status(500).send({ error: "Failed to fetch story" });
+  }
+});
 
-router.get('/character/:characterId', async(req, res) => {
-  const { characterId } = req.params;
+router.get("/character/:characterId", async (req, res) => {
+  try {
+    const { characterId } = req.params;
+    const stories = await storyService.getByCharacterId(characterId);
+    res.send(stories);
+  } catch (err) {
+    res.status(500).send({ error: "Failed to fetch character stories" });
+  }
+});
 
-  const stories = await storyService.getByCharacterId(characterId);
-
-  res.send(stories);
-})
- 
 module.exports = router;

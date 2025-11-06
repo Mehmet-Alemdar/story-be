@@ -1,25 +1,43 @@
-const router = require('express').Router();
-const characterService = require('./character.service');
+const router = require("express").Router();
+const multer = require("multer");
+const characterService = require("./character.service");
+const { FirebaseStorageService } = require("../../firebase/firebase-storage.service");
 
-router.post('/', async(req, res) => {
-  const body = req.body;
+const upload = multer({ dest: "uploads/" });
 
-  const createdCharacter = await characterService.create(body);
+router.post("/", upload.array("images"), async (req, res) => {
+  try {
+    const { name, description } = req.body;
+    const files = req.files || [];
 
-  return res.send(createdCharacter);
-})
+    const uploadedUrls = await Promise.all(
+      files.map((file) =>
+        FirebaseStorageService.uploadFile(file.path, file.originalname, "characters")
+      )
+    );
 
-router.get('/', async(req, res) => {
+    const createdCharacter = await characterService.create({
+      name,
+      description,
+      images: uploadedUrls,
+    });
+
+    return res.status(201).send(createdCharacter);
+  } catch (error) {
+    console.error("Character create error:", error);
+    return res.status(500).send({ error: "Character creation failed" });
+  }
+});
+
+router.get("/", async (req, res) => {
   const characters = await characterService.getAll();
-
   return res.send(characters);
-})
+});
 
-router.get('/:id', async(req, res) => {
+router.get("/:id", async (req, res) => {
   const { id } = req.params;
   const character = await characterService.getById(id);
-
   return res.send(character);
-})
+});
 
 module.exports = router;
