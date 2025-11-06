@@ -4,6 +4,7 @@ require('./mongo-connection')
 const express = require('express')
 const cors = require('cors')
 
+const auth = require('./auth/login');
 const user = require('./modules/user/user.controller')
 const character = require('./modules/character/character.controller')
 const story = require('./modules/story/story.controller')
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
   res.send('Hi')
 })
 
+app.use('/auth', auth)
 app.use('/user', user)
 app.use('/character', character)
 app.use('/story', story)

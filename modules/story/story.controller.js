@@ -2,10 +2,11 @@ const router = require("express").Router();
 const multer = require("multer");
 const storyService = require("./story.service");
 const { FirebaseStorageService } = require("../../firebase/firebase-storage.service");
+const { verifyAdmin } = require("../../middleware/verify-admin");
 
 const upload = multer({ dest: "uploads/" });
 
-router.post("/", upload.array("videos"), async (req, res) => {
+router.post("/", verifyAdmin, upload.array("videos"), async (req, res) => {
   try {
     const { name, character, type } = req.body;
     const files = req.files || [];

@@ -1,5 +1,6 @@
 .env
 .package.json
 .package-lock.json
-.uploads
+uploads
 node_modules
+firebase/config
