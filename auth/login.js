@@ -3,9 +3,11 @@ const router = express.Router();
 const { getAuth, signInWithEmailAndPassword } = require("firebase/auth");
 const { firebaseApp } = require("../firebase/firebase.config");
 
+const { loginLimiter } = require("../middleware/rate-limit");
+
 const auth = getAuth(firebaseApp);
 
-router.post("/login", async (req, res) => {
+router.post("/login", loginLimiter, async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password)

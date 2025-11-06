@@ -4,6 +4,8 @@ require('./mongo-connection')
 const express = require('express')
 const cors = require('cors')
 
+const { generalLimiter } = require("./middleware/rate-limit");
+
 const auth = require('./auth/login');
 const user = require('./modules/user/user.controller')
 const character = require('./modules/character/character.controller')
@@ -13,6 +15,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
+app.use(generalLimiter);
 
 app.get('/', (req, res) => {
   res.send('Hi')
