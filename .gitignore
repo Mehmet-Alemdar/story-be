@@ -2,5 +2,5 @@
 .package.json
 .package-lock.json
 uploads
-node_modules
+node_modules/
 firebase/config
