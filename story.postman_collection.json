@@ -51,7 +51,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU0NTEzMjA5OWFkNmJmNjEzODJiNmI0Y2RlOWEyZGZlZDhjYjMwZjAiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoiYWRtaW4iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc3RvcnktODliMGMiLCJhdWQiOiJzdG9yeS04OWIwYyIsImF1dGhfdGltZSI6MTc2MjQ1MTkxMCwidXNlcl9pZCI6ImF6N0R1bklNMm9RSERTZVdvbW1mZnVlV1o2eTEiLCJzdWIiOiJhejdEdW5JTTJvUUhEU2VXb21tZmZ1ZVdaNnkxIiwiaWF0IjoxNzYyNDUxOTEwLCJleHAiOjE3NjI0NTU1MTAsImVtYWlsIjoiYWxlbWRhcm1laG1ldDZAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFsZW1kYXJtZWhtZXQ2QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.SvXpsFmN8TX97YSuDiHIsxxNasmxikE1U78Pin0F42CejDex62T2n-l_UDqYtFWWIqtTz7ZBQ5NcBgE0bOwqUGVeRGTlNSzjZ_d8yDSIFNLcs7VrRxiqoJpF6nRhvopwcKu6l0smJppkRlAVnWNg_dkZ-UuLjDlOxU3OYF09OkEi_6KQlBicQID3cPACL_xekSAFuF1__BevQO5WdYeog7RIGrnhjSTqfci24867gSq-Hgo5GkDNbzJkOxu31nus4yBrhRCoFusYJ1Dn4GIul_OO-_8vFMXBDxh8ZhoqfMA2Zbqkyy1V3t6MJBpnsptTBNRrvC1S0oOuyPK7xpHGkg",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU0NTEzMjA5OWFkNmJmNjEzODJiNmI0Y2RlOWEyZGZlZDhjYjMwZjAiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoiYWRtaW4iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc3RvcnktODliMGMiLCJhdWQiOiJzdG9yeS04OWIwYyIsImF1dGhfdGltZSI6MTc2MjgwMDMwMywidXNlcl9pZCI6ImF6N0R1bklNMm9RSERTZVdvbW1mZnVlV1o2eTEiLCJzdWIiOiJhejdEdW5JTTJvUUhEU2VXb21tZmZ1ZVdaNnkxIiwiaWF0IjoxNzYyODAwMzAzLCJleHAiOjE3NjI4MDM5MDMsImVtYWlsIjoiYWxlbWRhcm1laG1ldDZAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFsZW1kYXJtZWhtZXQ2QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.EmqHrxxCjEg8eK7qUrvucH4fCbQLaKMLlDNOHbdZypU4Teg7H1otwCn2C0k__xsckOemm_DaWWpbOVBX5PcImm2v_RYg7ggFQ7OXozEM_VIgw3Xku-IVOEEzfafSVFpFlOkO5iuWA3HpMkH5HauqKRy6dQfPJtvDKy8A7ndjwwnRCuJFx72IUXTXbg5KT3Kh39eMappwOjzeuD8RSV3KJGN6pp_NyFmA2hirvboi9ATBW-RBoLPiEwq_ZC0fGNLgiSV68QRuBjDvXvHCOAmRHyQT54cAK-5_4DnI6QSFwwI00-9hfNmDPFrbOQlZn65zEUikLAjYDmRRcQPb8K2deg",
 									"type": "string"
 								}
 							]
@@ -63,7 +63,7 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Pikachu",
+									"value": "Pikachu2331",
 									"type": "text"
 								},
 								{
@@ -74,7 +74,7 @@
 								{
 									"key": "images",
 									"type": "file",
-									"src": "/Users/mehmetalemdar/Downloads/pikachu.jpg"
+									"src": "/Users/mehmetalemdar/Downloads/_701cf3be-2ed2-42da-926e-ff0d9fa7dd2e.jpeg"
 								}
 							]
 						},
@@ -168,7 +168,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU0NTEzMjA5OWFkNmJmNjEzODJiNmI0Y2RlOWEyZGZlZDhjYjMwZjAiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoiYWRtaW4iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc3RvcnktODliMGMiLCJhdWQiOiJzdG9yeS04OWIwYyIsImF1dGhfdGltZSI6MTc2MjQ1MzQyOCwidXNlcl9pZCI6ImF6N0R1bklNMm9RSERTZVdvbW1mZnVlV1o2eTEiLCJzdWIiOiJhejdEdW5JTTJvUUhEU2VXb21tZmZ1ZVdaNnkxIiwiaWF0IjoxNzYyNDUzNDI4LCJleHAiOjE3NjI0NTcwMjgsImVtYWlsIjoiYWxlbWRhcm1laG1ldDZAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFsZW1kYXJtZWhtZXQ2QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.Vqcka6YapW3iKW4r0ZmIlooZk3aShAr8fpmTQH96SyZNMbg5SMEbQIcezDLON7zmH2VWz9O-PDxSoyaREcNNrHOt6yQJkNCVWftFtvJLSL6e8uOkr4zLnDKqm6-MuUnoGcu30eleRbLNEkSBIcH8RNKfMKXk2r25M5TZG54hgsXVwwVfoEPBieGnnPfqcx2Blx-gHAF2IDA6jqYGiZwJ2rIyJP4zF0U_tvf9LmSJV6nUXCj1aIJPLq04SmuZLJ6mhY2JGlL5TCeL_WVNrPw9BT0AMd7b0CzBrl8OksubcAlvqIDOS0XkGmAKyr7hf0RUz51JERmn_3iFP7ZBrsgbmQ",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU0NTEzMjA5OWFkNmJmNjEzODJiNmI0Y2RlOWEyZGZlZDhjYjMwZjAiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoiYWRtaW4iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc3RvcnktODliMGMiLCJhdWQiOiJzdG9yeS04OWIwYyIsImF1dGhfdGltZSI6MTc2MjgwMDMwMywidXNlcl9pZCI6ImF6N0R1bklNMm9RSERTZVdvbW1mZnVlV1o2eTEiLCJzdWIiOiJhejdEdW5JTTJvUUhEU2VXb21tZmZ1ZVdaNnkxIiwiaWF0IjoxNzYyODAwMzAzLCJleHAiOjE3NjI4MDM5MDMsImVtYWlsIjoiYWxlbWRhcm1laG1ldDZAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFsZW1kYXJtZWhtZXQ2QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.EmqHrxxCjEg8eK7qUrvucH4fCbQLaKMLlDNOHbdZypU4Teg7H1otwCn2C0k__xsckOemm_DaWWpbOVBX5PcImm2v_RYg7ggFQ7OXozEM_VIgw3Xku-IVOEEzfafSVFpFlOkO5iuWA3HpMkH5HauqKRy6dQfPJtvDKy8A7ndjwwnRCuJFx72IUXTXbg5KT3Kh39eMappwOjzeuD8RSV3KJGN6pp_NyFmA2hirvboi9ATBW-RBoLPiEwq_ZC0fGNLgiSV68QRuBjDvXvHCOAmRHyQT54cAK-5_4DnI6QSFwwI00-9hfNmDPFrbOQlZn65zEUikLAjYDmRRcQPb8K2deg",
 									"type": "string"
 								}
 							]
@@ -191,7 +191,7 @@
 								{
 									"key": "videos",
 									"type": "file",
-									"src": "/Users/mehmetalemdar/Downloads/pikachu.jpg"
+									"src": "/Users/mehmetalemdar/Downloads/_701cf3be-2ed2-42da-926e-ff0d9fa7dd2e.jpeg"
 								},
 								{
 									"key": "type",
@@ -336,12 +336,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/auth/login",
+							"raw": "http://localhost:8080/auth/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "8080",
 							"path": [
 								"auth",
 								"login"
