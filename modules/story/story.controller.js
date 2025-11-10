@@ -1,8 +1,10 @@
 const router = require("express").Router();
 const multer = require("multer");
 const storyService = require("./story.service");
-const { FirebaseStorageService } = require("../../firebase/firebase-storage.service");
 const { verifyAdmin } = require("../../middleware/verify-admin");
+const fs = require("fs");
+const { uploadFile } = require("../../r2/r2.service");
+const { sanitizedFileName } = require("../../lib/sanitized_file_name");
 
 const upload = multer({ dest: "uploads/" });
 
@@ -11,11 +13,20 @@ router.post("/", verifyAdmin, upload.array("videos"), async (req, res) => {
     const { name, character, type } = req.body;
     const files = req.files || [];
 
-    const uploadedUrls = await Promise.all(
-      files.map((file) =>
-        FirebaseStorageService.uploadFile(file.path, file.originalname, "stories")
-      )
-    );
+    const uploadedUrls = [];
+
+    for (const file of files) {
+      const url = await uploadFile(
+        file.path,
+        sanitizedFileName(file),
+        "stories",
+        file.mimetype
+      );
+
+      uploadedUrls.push(url);
+
+      fs.unlinkSync(file.path);
+    }
 
     const createdStory = await storyService.create({
       name,
