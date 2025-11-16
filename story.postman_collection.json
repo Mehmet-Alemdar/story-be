@@ -51,7 +51,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU0NTEzMjA5OWFkNmJmNjEzODJiNmI0Y2RlOWEyZGZlZDhjYjMwZjAiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoiYWRtaW4iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc3RvcnktODliMGMiLCJhdWQiOiJzdG9yeS04OWIwYyIsImF1dGhfdGltZSI6MTc2MjgwMDMwMywidXNlcl9pZCI6ImF6N0R1bklNMm9RSERTZVdvbW1mZnVlV1o2eTEiLCJzdWIiOiJhejdEdW5JTTJvUUhEU2VXb21tZmZ1ZVdaNnkxIiwiaWF0IjoxNzYyODAwMzAzLCJleHAiOjE3NjI4MDM5MDMsImVtYWlsIjoiYWxlbWRhcm1laG1ldDZAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFsZW1kYXJtZWhtZXQ2QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.EmqHrxxCjEg8eK7qUrvucH4fCbQLaKMLlDNOHbdZypU4Teg7H1otwCn2C0k__xsckOemm_DaWWpbOVBX5PcImm2v_RYg7ggFQ7OXozEM_VIgw3Xku-IVOEEzfafSVFpFlOkO5iuWA3HpMkH5HauqKRy6dQfPJtvDKy8A7ndjwwnRCuJFx72IUXTXbg5KT3Kh39eMappwOjzeuD8RSV3KJGN6pp_NyFmA2hirvboi9ATBW-RBoLPiEwq_ZC0fGNLgiSV68QRuBjDvXvHCOAmRHyQT54cAK-5_4DnI6QSFwwI00-9hfNmDPFrbOQlZn65zEUikLAjYDmRRcQPb8K2deg",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1YTZjMGMyYjgwMDcxN2EzNGQ1Y2JiYmYzOWI4NGI2NzYxMjgyNjUiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoiYWRtaW4iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc3RvcnktODliMGMiLCJhdWQiOiJzdG9yeS04OWIwYyIsImF1dGhfdGltZSI6MTc2MzI3OTk5NCwidXNlcl9pZCI6ImF6N0R1bklNMm9RSERTZVdvbW1mZnVlV1o2eTEiLCJzdWIiOiJhejdEdW5JTTJvUUhEU2VXb21tZmZ1ZVdaNnkxIiwiaWF0IjoxNzYzMjc5OTk0LCJleHAiOjE3NjMyODM1OTQsImVtYWlsIjoiYWxlbWRhcm1laG1ldDZAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFsZW1kYXJtZWhtZXQ2QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.HWDLGOIlymfypjqrjAa2htfkFwT5XhlKQiP3N216FnmQcaawJ6P1Fo6At12Ow85hKcrrtEBazNV73EURAMP2PmKWRgG9g7jrbA5PehbXVdS_Gpp0l5477N655EVPJLNFYpByzHUJMiseESob3GmJC_tMvN0wky_boZYT2qFC6Jm7OAR_niqE9P4NmoJagh2BD_9EAiio0-3MjWZBFJ9Ek6lcFwYDlx8bYhFGQL6IWjlgjPEvO6-LKFLQWjGVKtBZV34NyiuJWzb7puGw6VAFDWUgCidYoUOuduTIXeVyxOFh88OY6s6CvNefIi8h-ycXMTMrhOteJ-_A56JELbjORA",
 									"type": "string"
 								}
 							]
@@ -63,18 +63,18 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Pikachu2331",
+									"value": "Batukan",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "Elektrik tipi Pokémon",
+									"value": "Piç tipi hayvan",
 									"type": "text"
 								},
 								{
 									"key": "images",
 									"type": "file",
-									"src": "/Users/mehmetalemdar/Downloads/_701cf3be-2ed2-42da-926e-ff0d9fa7dd2e.jpeg"
+									"src": "/Users/mehmetalemdar/Downloads/_1e04693a-09a0-4510-9716-bc73e64f9d65.jpeg"
 								}
 							]
 						},
@@ -99,7 +99,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "neQttL!HIlD=ggbu4K0f",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n  \"name\": \"Aslan Ravon\",\n  \"images\": [\n    \"https://example.com/images/ravon1.png\",\n    \"https://example.com/images/ravon2.png\"\n  ],\n  \"description\": \"Ravon, cesareti ve liderliğiyle bilinen genç bir aslandır. Sürüsünü korurken aynı zamanda barışı savunur. Kükremesi savanlarda yankılandığında herkes onun orada olduğunu bilir.\"\n}\n",
@@ -130,7 +136,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "neQttL!HIlD=ggbu4K0f",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n  \"name\": \"Aslan Ravon\",\n  \"images\": [\n    \"https://example.com/images/ravon1.png\",\n    \"https://example.com/images/ravon2.png\"\n  ],\n  \"description\": \"Ravon, cesareti ve liderliğiyle bilinen genç bir aslandır. Sürüsünü korurken aynı zamanda barışı savunur. Kükremesi savanlarda yankılandığında herkes onun orada olduğunu bilir.\"\n}\n",
@@ -141,7 +153,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/character/690a39ae67cf59fd4bdc77fe",
+							"raw": "http://localhost:3000/character/6919848719989cf5854f55d6",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -149,7 +161,7 @@
 							"port": "3000",
 							"path": [
 								"character",
-								"690a39ae67cf59fd4bdc77fe"
+								"6919848719989cf5854f55d6"
 							]
 						}
 					},
@@ -168,7 +180,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU0NTEzMjA5OWFkNmJmNjEzODJiNmI0Y2RlOWEyZGZlZDhjYjMwZjAiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoiYWRtaW4iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc3RvcnktODliMGMiLCJhdWQiOiJzdG9yeS04OWIwYyIsImF1dGhfdGltZSI6MTc2MjgwMDMwMywidXNlcl9pZCI6ImF6N0R1bklNMm9RSERTZVdvbW1mZnVlV1o2eTEiLCJzdWIiOiJhejdEdW5JTTJvUUhEU2VXb21tZmZ1ZVdaNnkxIiwiaWF0IjoxNzYyODAwMzAzLCJleHAiOjE3NjI4MDM5MDMsImVtYWlsIjoiYWxlbWRhcm1laG1ldDZAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFsZW1kYXJtZWhtZXQ2QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.EmqHrxxCjEg8eK7qUrvucH4fCbQLaKMLlDNOHbdZypU4Teg7H1otwCn2C0k__xsckOemm_DaWWpbOVBX5PcImm2v_RYg7ggFQ7OXozEM_VIgw3Xku-IVOEEzfafSVFpFlOkO5iuWA3HpMkH5HauqKRy6dQfPJtvDKy8A7ndjwwnRCuJFx72IUXTXbg5KT3Kh39eMappwOjzeuD8RSV3KJGN6pp_NyFmA2hirvboi9ATBW-RBoLPiEwq_ZC0fGNLgiSV68QRuBjDvXvHCOAmRHyQT54cAK-5_4DnI6QSFwwI00-9hfNmDPFrbOQlZn65zEUikLAjYDmRRcQPb8K2deg",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1YTZjMGMyYjgwMDcxN2EzNGQ1Y2JiYmYzOWI4NGI2NzYxMjgyNjUiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoiYWRtaW4iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc3RvcnktODliMGMiLCJhdWQiOiJzdG9yeS04OWIwYyIsImF1dGhfdGltZSI6MTc2MzI3OTk5NCwidXNlcl9pZCI6ImF6N0R1bklNMm9RSERTZVdvbW1mZnVlV1o2eTEiLCJzdWIiOiJhejdEdW5JTTJvUUhEU2VXb21tZmZ1ZVdaNnkxIiwiaWF0IjoxNzYzMjc5OTk0LCJleHAiOjE3NjMyODM1OTQsImVtYWlsIjoiYWxlbWRhcm1laG1ldDZAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFsZW1kYXJtZWhtZXQ2QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.HWDLGOIlymfypjqrjAa2htfkFwT5XhlKQiP3N216FnmQcaawJ6P1Fo6At12Ow85hKcrrtEBazNV73EURAMP2PmKWRgG9g7jrbA5PehbXVdS_Gpp0l5477N655EVPJLNFYpByzHUJMiseESob3GmJC_tMvN0wky_boZYT2qFC6Jm7OAR_niqE9P4NmoJagh2BD_9EAiio0-3MjWZBFJ9Ek6lcFwYDlx8bYhFGQL6IWjlgjPEvO6-LKFLQWjGVKtBZV34NyiuJWzb7puGw6VAFDWUgCidYoUOuduTIXeVyxOFh88OY6s6CvNefIi8h-ycXMTMrhOteJ-_A56JELbjORA",
 									"type": "string"
 								}
 							]
@@ -180,18 +192,18 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Pikachu Ormanda 2",
+									"value": "Pikach Batukan",
 									"type": "text"
 								},
 								{
 									"key": "character",
-									"value": "690ce7488a5b7430c812951b",
+									"value": "6919848719989cf5854f55d6",
 									"type": "text"
 								},
 								{
 									"key": "videos",
 									"type": "file",
-									"src": "/Users/mehmetalemdar/Downloads/_701cf3be-2ed2-42da-926e-ff0d9fa7dd2e.jpeg"
+									"src": "/Users/mehmetalemdar/Downloads/_4d879b4b-f441-4d11-b8ff-08d985613b10.jpeg"
 								},
 								{
 									"key": "type",
@@ -227,7 +239,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "neQttL!HIlD=ggbu4K0f",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n  \"name\": \"Aslan Ravon\",\n  \"images\": [\n    \"https://example.com/images/ravon1.png\",\n    \"https://example.com/images/ravon2.png\"\n  ],\n  \"description\": \"Ravon, cesareti ve liderliğiyle bilinen genç bir aslandır. Sürüsünü korurken aynı zamanda barışı savunur. Kükremesi savanlarda yankılandığında herkes onun orada olduğunu bilir.\"\n}\n",
@@ -258,7 +276,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "neQttL!HIlD=ggbu4K0f",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n  \"name\": \"Aslan Ravon\",\n  \"images\": [\n    \"https://example.com/images/ravon1.png\",\n    \"https://example.com/images/ravon2.png\"\n  ],\n  \"description\": \"Ravon, cesareti ve liderliğiyle bilinen genç bir aslandır. Sürüsünü korurken aynı zamanda barışı savunur. Kükremesi savanlarda yankılandığında herkes onun orada olduğunu bilir.\"\n}\n",
@@ -269,7 +293,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/story/690cd6ae3b8e740857084b04",
+							"raw": "http://localhost:3000/story/69198663c930bb2ca16b2b82",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -277,7 +301,7 @@
 							"port": "3000",
 							"path": [
 								"story",
-								"690cd6ae3b8e740857084b04"
+								"69198663c930bb2ca16b2b82"
 							]
 						}
 					},
@@ -290,7 +314,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "neQttL!HIlD=ggbu4K0f",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n  \"name\": \"Aslan Ravon\",\n  \"images\": [\n    \"https://example.com/images/ravon1.png\",\n    \"https://example.com/images/ravon2.png\"\n  ],\n  \"description\": \"Ravon, cesareti ve liderliğiyle bilinen genç bir aslandır. Sürüsünü korurken aynı zamanda barışı savunur. Kükremesi savanlarda yankılandığında herkes onun orada olduğunu bilir.\"\n}\n",
@@ -301,7 +331,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/story/character/690b7c311e0b994a4157f7bb",
+							"raw": "http://localhost:3000/story/character/6919848719989cf5854f55d6",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -310,7 +340,7 @@
 							"path": [
 								"story",
 								"character",
-								"690b7c311e0b994a4157f7bb"
+								"6919848719989cf5854f55d6"
 							]
 						}
 					},
@@ -336,12 +366,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/auth/login",
+							"raw": "http://localhost:3000/auth/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "3000",
 							"path": [
 								"auth",
 								"login"
