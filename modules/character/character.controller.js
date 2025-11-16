@@ -5,24 +5,25 @@ const { verifyAdmin } = require("../../middleware/verify-admin");
 const { uploadFile } = require("../../r2/r2.service");
 const fs = require("fs");
 const { sanitizedFileName } = require("../../lib/sanitized_file_name");
-const upload = multer({ dest: "uploads/" });
 
+const upload = multer({ dest: "uploads/" });
 
 router.post("/", verifyAdmin, upload.array("images"), async (req, res) => {
   try {
     const { name, description } = req.body;
     const files = req.files || [];
 
-    const uploadedUrls = [];
+    const uploadedKeys = [];
 
     for (const file of files) {
-      const url = await uploadFile(
+      const key = await uploadFile(
         file.path,
         sanitizedFileName(file),
         "characters",
         file.mimetype
       );
-      uploadedUrls.push(url);
+
+      uploadedKeys.push(key);
 
       fs.unlinkSync(file.path);
     }
@@ -30,7 +31,7 @@ router.post("/", verifyAdmin, upload.array("images"), async (req, res) => {
     const createdCharacter = await characterService.create({
       name,
       description,
-      images: uploadedUrls,
+      images: uploadedKeys,
     });
 
     return res.status(201).send(createdCharacter);

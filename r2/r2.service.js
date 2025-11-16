@@ -1,4 +1,10 @@
-const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+const { 
+  S3Client, 
+  PutObjectCommand, 
+  GetObjectCommand 
+} = require("@aws-sdk/client-s3");
+
+const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
 const fs = require("fs");
 
 const r2 = new S3Client({
@@ -23,7 +29,16 @@ async function uploadFile(filePath, fileName, folder, mimeType) {
 
   await r2.send(command);
 
-  return `https://pub-${process.env.CLOUDFLARE_ACCOUNT_ID}.r2.dev/${key}`;
+  return key;
 }
 
-module.exports = { uploadFile };
+async function getPresignedUrl(key) {
+  const command = new GetObjectCommand({
+    Bucket: process.env.CLOUDFLARE_BUCKET,
+    Key: key,
+  });
+
+  return getSignedUrl(r2, command, { expiresIn: 3600 });
+}
+
+module.exports = { uploadFile, getPresignedUrl };

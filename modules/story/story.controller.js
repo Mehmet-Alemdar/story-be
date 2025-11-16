@@ -13,17 +13,17 @@ router.post("/", verifyAdmin, upload.array("videos"), async (req, res) => {
     const { name, character, type } = req.body;
     const files = req.files || [];
 
-    const uploadedUrls = [];
+    const uploadedKeys = [];
 
     for (const file of files) {
-      const url = await uploadFile(
+      const key = await uploadFile(
         file.path,
         sanitizedFileName(file),
         "stories",
         file.mimetype
       );
 
-      uploadedUrls.push(url);
+      uploadedKeys.push(key);
 
       fs.unlinkSync(file.path);
     }
@@ -32,7 +32,7 @@ router.post("/", verifyAdmin, upload.array("videos"), async (req, res) => {
       name,
       character,
       type: type || "video",
-      videoContent: uploadedUrls,
+      videoContent: uploadedKeys,
     });
 
     res.status(201).send(createdStory);
@@ -41,6 +41,7 @@ router.post("/", verifyAdmin, upload.array("videos"), async (req, res) => {
     res.status(500).send({ error: "Story creation failed" });
   }
 });
+
 
 router.get("/", async (req, res) => {
   try {
