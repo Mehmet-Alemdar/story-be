@@ -2,6 +2,7 @@ const router = require("express").Router();
 const multer = require("multer");
 const storyService = require("./story.service");
 const { verifyAdmin } = require("../../middleware/verify-admin");
+const { verifyKey } = require("../../middleware/key-check");
 const fs = require("fs");
 const { uploadFile } = require("../../r2/r2.service");
 const { sanitizedFileName } = require("../../lib/sanitized_file_name");
@@ -43,7 +44,7 @@ router.post("/", verifyAdmin, upload.array("videos"), async (req, res) => {
 });
 
 
-router.get("/", async (req, res) => {
+router.get("/", verifyKey, async (req, res) => {
   try {
     const stories = await storyService.getAll();
     res.send(stories);
@@ -52,7 +53,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", verifyKey, async (req, res) => {
   try {
     const { id } = req.params;
     const story = await storyService.getById(id);
@@ -62,7 +63,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.get("/character/:characterId", async (req, res) => {
+router.get("/character/:characterId", verifyKey, async (req, res) => {
   try {
     const { characterId } = req.params;
     const stories = await storyService.getByCharacterId(characterId);

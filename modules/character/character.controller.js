@@ -2,6 +2,7 @@ const router = require("express").Router();
 const multer = require("multer");
 const characterService = require("./character.service");
 const { verifyAdmin } = require("../../middleware/verify-admin");
+const { verifyKey } = require("../../middleware/key-check");
 const { uploadFile } = require("../../r2/r2.service");
 const fs = require("fs");
 const { sanitizedFileName } = require("../../lib/sanitized_file_name");
@@ -41,12 +42,12 @@ router.post("/", verifyAdmin, upload.array("images"), async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+router.get("/", verifyKey, async (req, res) => {
   const characters = await characterService.getAll();
   return res.send(characters);
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", verifyKey, async (req, res) => {
   const { id } = req.params;
   const character = await characterService.getById(id);
   return res.send(character);
