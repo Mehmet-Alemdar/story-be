@@ -7,6 +7,7 @@ const StorySchema = new mongoose.Schema({
     type: [String],
     required: true
   },
+  image: { type: String, default: null},
   type: { type: String, default: 'video'}, // video | book
   isPremium: { type: Boolean, default: false},
   isActive: { type: Boolean, default: true},

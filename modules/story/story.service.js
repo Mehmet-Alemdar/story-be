@@ -1,6 +1,22 @@
 const StoryModel = require("./story.model");
 const { getPresignedUrl } = require("../../r2/r2.service");
 
+async function formatStoryResponse(story) {
+  const { videoContent, image, ...rest } = story.toObject();
+
+  const videoUrls = await Promise.all(
+    (videoContent || []).map((key) => getPresignedUrl(key))
+  );
+
+  const imageUrl = image ? await getPresignedUrl(image) : null;
+
+  return {
+    ...rest,
+    videoUrls,
+    imageUrl,
+  };
+}
+
 class StoryService {
   async create(data) {
     return await StoryModel.create(data);
@@ -8,43 +24,14 @@ class StoryService {
 
   async getAll() {
     const stories = await StoryModel.find({ isActive: true });
-
-    return await Promise.all(
-      stories.map(async (story) => {
-        const urls = [];
-
-        for (const key of story.videoContent) {
-          const signedUrl = await getPresignedUrl(key);
-          urls.push(signedUrl);
-        }
-
-        const { videoContent, ...rest } = story.toObject();
-
-        return {
-          ...rest,
-          videoUrls: urls,
-        };
-      })
-    );
+    return Promise.all(stories.map((story) => formatStoryResponse(story)));
   }
 
   async getById(id) {
     const story = await StoryModel.findOne({ _id: id, isActive: true });
-
     if (!story) return null;
 
-    const urls = [];
-
-    for (const key of story.videoContent) {
-      urls.push(await getPresignedUrl(key));
-    }
-
-    const { videoContent, ...rest } = story.toObject();
-
-    return {
-      ...rest,
-      videoUrls: urls,
-    };
+    return formatStoryResponse(story);
   }
 
   async getByCharacterId(characterId) {
@@ -53,22 +40,7 @@ class StoryService {
       isActive: true,
     });
 
-    return await Promise.all(
-      stories.map(async (story) => {
-        const urls = [];
-
-        for (const key of story.videoContent) {
-          urls.push(await getPresignedUrl(key));
-        }
-
-        const { videoContent, ...rest } = story.toObject();
-
-        return {
-          ...rest,
-          videoUrls: urls,
-        };
-      })
-    );
+    return Promise.all(stories.map((story) => formatStoryResponse(story)));
   }
 }
 

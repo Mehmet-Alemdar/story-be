@@ -9,40 +9,64 @@ const { sanitizedFileName } = require("../../lib/sanitized_file_name");
 
 const upload = multer({ dest: "uploads/" });
 
-router.post("/", verifyAdmin, upload.array("videos"), async (req, res) => {
-  try {
-    const { name, character, type } = req.body;
-    const files = req.files || [];
+router.post(
+  "/",
+  verifyAdmin,
+  upload.fields([
+    { name: "videos", maxCount: 10 },
+    { name: "image", maxCount: 1 }
+  ]),
+  async (req, res) => {
+    try {
+      const { name, character, type } = req.body;
 
-    const uploadedKeys = [];
+      const videoFiles = req.files["videos"] || [];
+      const imageFile = req.files["image"] ? req.files["image"][0] : null;
 
-    for (const file of files) {
-      const key = await uploadFile(
-        file.path,
-        sanitizedFileName(file),
-        "stories",
-        file.mimetype
-      );
+      const uploadedKeys = [];
+      let uploadedImageKey = null;
 
-      uploadedKeys.push(key);
+      for (const file of videoFiles) {
+        const key = await uploadFile(
+          file.path,
+          sanitizedFileName(file),
+          "stories",
+          file.mimetype
+        );
 
-      fs.unlinkSync(file.path);
+        uploadedKeys.push(key);
+
+        fs.unlinkSync(file.path);
+      }
+
+      if (imageFile) {
+        uploadedImageKey = await uploadFile(
+          imageFile.path,
+          sanitizedFileName(imageFile),
+          "story-images",
+          imageFile.mimetype
+        );
+
+        fs.unlinkSync(imageFile.path);
+      }
+
+      // --- Story oluştur ---
+      const createdStory = await storyService.create({
+        name,
+        character,
+        type: type || "video",
+        videoContent: uploadedKeys,
+        image: uploadedImageKey,
+      });
+
+      res.status(201).send(createdStory);
+
+    } catch (error) {
+      console.error("Story create error:", error);
+      res.status(500).send({ error: "Story creation failed" });
     }
-
-    const createdStory = await storyService.create({
-      name,
-      character,
-      type: type || "video",
-      videoContent: uploadedKeys,
-    });
-
-    res.status(201).send(createdStory);
-  } catch (error) {
-    console.error("Story create error:", error);
-    res.status(500).send({ error: "Story creation failed" });
   }
-});
-
+);
 
 router.get("/", verifyKey, async (req, res) => {
   try {
